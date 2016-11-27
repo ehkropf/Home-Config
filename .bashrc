@@ -82,7 +82,7 @@ if [ -x /usr/bin/dircolors ]; then
     #alias egrep='egrep --color=auto'
 fi
 
-# color grep?
+# Color grep? Yes please!
 alias grep='grep --color=auto'
 
 # some ls aliases
@@ -90,8 +90,9 @@ alias ls='ls -GF'
 alias ll='ls -l'
 alias la='ls -A'
 
-# m-file grep
+# Source grep-ing.
 alias mgrep='find . -name \*.m | xargs grep -n --color=auto'
+alias cgrep='find -E . -regex ".*\.(c|h|cpp|hpp)" | xargs grep --color=auto'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
