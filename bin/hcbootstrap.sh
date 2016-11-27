@@ -2,16 +2,23 @@
 # Everett Kropf, 2016
 
 GIT=/usr/bin/git
-REPO=~/Dropbox/Source/hconfig
+REPO=~/Dropbox/Source/hconfig.git
+THOME=$HOME/tmp/home
 
 # Make sure we're working in the right directory.
-cd $HOME
+cd $THOME
 
 # Customise git.
-hconfig="$GIT --git-dir=$HOME/.hconfig --work-tree=$HOME"
+hconfig="$GIT --git-dir=$THOME/.hconfig --work-tree=$THOME"
 
 # Clone repository to home.
-$GIT clone --bare $REPO $HOME/.hconfig
+$GIT clone --bare $REPO $THOME/.hconfig
+
+# Fix remote tracking.
+$hconfig remote remove origin
+$hconfig remote add origin $REPO
+$hconfig fetch origin
+$hconfig branch -u origin/master master
 
 # Try checkout.
 RESULT=/tmp/hcbs.${RANDOM}.txt
@@ -19,7 +26,7 @@ $hconfig checkout 2> $RESULT
 
 if [ $? -ne 0 ]; then
     echo "Backing up existing files."
-    BDIR=.config-backup
+    BDIR=.hconfig-backup
 
     if [ -d $BDIR ]; then
         echo "Backup directory already exists. Not overwriting."
@@ -28,12 +35,13 @@ if [ $? -ne 0 ]; then
 
     mkdir $BDIR
 
-    files=$(cat $RESULT | egrep "\s+\." | awk {'print $1'})
+    files=$(cat $RESULT | egrep "^\s+\S" | awk {'print $1'})
     rsync --remove-source-files -aR $files $BDIR
 
     $hconfig checkout 2> $RESULT
 fi
 cat $RESULT
+rm $RESULT
 
 # Don't show untracked files (the rest of the home directory).
 $hconfig config --local status.showUntrackedFiles no
