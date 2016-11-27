@@ -3,7 +3,10 @@
 
 GIT=/usr/bin/git
 REPO=~/Dropbox/Source/hconfig.git
-THOME=$HOME/tmp/home
+
+# Set appropriately for testing.
+# THOME=$HOME/tmp/home
+THOME=$HOME
 
 # Make sure we're working in the right directory.
 cd $THOME
