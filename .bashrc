@@ -121,4 +121,4 @@ export PATH=$PATH:~/bin
 # export PYTHONPATH=~/lib/python
 
 # Dotfile tracking (home config).
-alias hconfig='/usr/bin/git --git-dir=$HOME/tmp/home/.hconfig --work-tree=$HOME/tmp/home'
+alias hconfig='/usr/bin/git --git-dir=$HOME/.hconfig --work-tree=$HOME'
