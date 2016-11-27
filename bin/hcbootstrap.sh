@@ -3,16 +3,15 @@
 
 GIT=/usr/bin/git
 REPO=~/Dropbox/Source/hconfig
-THOME=$HOME/tmp/home
 
 # Make sure we're working in the right directory.
-cd $THOME
+cd $HOME
 
 # Customise git.
-hconfig="$GIT --git-dir=$THOME/.hconfig --work-tree=$THOME"
+hconfig="$GIT --git-dir=$HOME/.hconfig --work-tree=$HOME"
 
 # Clone repository to home.
-$GIT clone --bare $REPO $THOME/.hconfig
+$GIT clone --bare $REPO $HOME/.hconfig
 
 # Try checkout.
 RESULT=/tmp/hcbs.${RANDOM}.txt
