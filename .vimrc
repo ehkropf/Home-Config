@@ -54,6 +54,9 @@ filetype plugin indent on    " required
 " End of Vundle config.
 """""""""""""""""""""""""""""""""""""""
 
+"""""""""""""""""""""""""""""""""""""""
+" YouCompleteMe
+"
 " Global config. (https://jonasdevlieghere.com/a-better-youcompleteme-config/)
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 
@@ -66,7 +69,8 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 " Disallow for ycm.
 let g:ycm_filetype_blacklist = { 'latex': 1 }
 
-" Airline things.
+"""""""""""""""""""""""""""""""""""""""
+" Airline
 set laststatus=2
 let g:airline_theme = 'light'
 if !exists('g:airline_symbols')
@@ -86,9 +90,8 @@ let g:airline_symbols.whitespace = 'Ξ'
 " bufferline things
 let g:bufferline_echo = 0
 
-" Now set above.
-" filetype plugin on
-" filetype indent on
+"""""""""""""""""""""""""""""""""""""""
+" Editor settings.
 
 "ruler is good
 set ruler
