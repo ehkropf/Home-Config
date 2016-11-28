@@ -80,6 +80,11 @@ alias la='ls -A'
 alias mgrep='find . -name \*.m | xargs grep -n'
 alias cgrep='find -E . -regex ".*\.(c|h|cpp|hpp)" | xargs grep'
 
+# Cxx search and replace.
+function csarep {
+    cgrep -l $1 | xargs sed -E -e "s/$1/$2/" -i ''
+}
+
 # random
 alias cleantex='rm -f *.{aux,bbl,blg,lof,log,lot,nav,out,snm,spl,toc}'
 alias ldd='otool -L'
