@@ -77,8 +77,8 @@ alias ll='ls -l'
 alias la='ls -A'
 
 # Source grep-ing.
-alias mgrep='find . -name \*.m | xargs grep -n --color=auto'
-alias cgrep='find -E . -regex ".*\.(c|h|cpp|hpp)" | xargs grep --color=auto'
+alias mgrep='find . -name \*.m | xargs grep -n'
+alias cgrep='find -E . -regex ".*\.(c|h|cpp|hpp)" | xargs grep'
 
 # random
 alias cleantex='rm -f *.{aux,bbl,blg,lof,log,lot,nav,out,snm,spl,toc}'
