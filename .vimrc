@@ -69,6 +69,12 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 " Disallow for ycm.
 let g:ycm_filetype_blacklist = { 'latex': 1 }
 
+" Call the semantic "most sensible" GoTo.
+map <F2> :YcmCompleter GoTo<CR>
+
+" Quick access to FixIt.
+map <F4> :YcmCompleter FixIt<CR>
+
 """""""""""""""""""""""""""""""""""""""
 " Airline
 set laststatus=2
