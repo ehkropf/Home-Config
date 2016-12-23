@@ -77,13 +77,16 @@ alias ll='ls -l'
 alias la='ls -A'
 
 # Source grep-ing.
-alias mgrep='find . -name \*.m | xargs grep -n'
-alias cgrep='find -E . -regex ".*\.(c|h|cpp|hpp)" | xargs grep'
+alias mgrep='find . -name \*.m | xargs grep -n --color=auto'
+alias cgrep='find -E . -regex ".*\.(c|h|cpp|hpp)" | xargs grep --color=auto'
 
 # Cxx search and replace.
 function csarep {
     cgrep -l $1 | xargs sed -E -e "s/$1/$2/" -i ''
 }
+
+# "view" for MacVim
+alias mview='mvim -R'
 
 # random
 alias cleantex='rm -f *.{aux,bbl,blg,lof,log,lot,nav,out,snm,spl,toc}'
