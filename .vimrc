@@ -33,7 +33,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'bling/vim-bufferline'
 Plugin 'vim-latex/vim-latex'
 Plugin 'vhdirk/vim-cmake'
 
@@ -92,9 +91,6 @@ let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.spell = 'Ꞩ'
 let g:airline_symbols.notexists = '∄'
 let g:airline_symbols.whitespace = 'Ξ'
-
-" bufferline things
-let g:bufferline_echo = 0
 
 """""""""""""""""""""""""""""""""""""""
 " Editor settings.
