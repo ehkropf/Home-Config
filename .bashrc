@@ -50,16 +50,15 @@ xterm*|rxvt*)
     ;;
 esac
 
-# Path for MacPorts
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ]; then
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
-elif [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
-    . /opt/local/etc/profile.d/bash_completion.sh
+  fi
 fi
 
 # VI mode FTW!
@@ -68,11 +67,16 @@ set -o vi
 # Dotfile tracking (home config).
 alias hconfig='/usr/bin/git --git-dir=$HOME/.hconfig --work-tree=$HOME'
 
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls -F --color=auto'
+fi
+
 # Color grep? Yes please!
 alias grep='grep --color=auto'
 
 # some ls aliases
-alias ls='ls -GF'
 alias ll='ls -l'
 alias la='ls -A'
 
@@ -85,12 +89,8 @@ function csarep {
     cgrep -l $1 | xargs sed -E -e "s/$1/$2/" -i ''
 }
 
-# "view" for MacVim
-alias mview='mvim -R'
-
 # random
 alias cleantex='rm -f *.{aux,bbl,blg,lof,log,lot,nav,out,snm,spl,toc}'
-alias ldd='otool -L'
 alias jupyter='ipython notebook'
 
 # add my own bin path
