@@ -91,7 +91,6 @@ alias mview='mvim -R'
 # random
 alias cleantex='rm -f *.{aux,bbl,blg,lof,log,lot,nav,out,snm,spl,toc}'
 alias ldd='otool -L'
-alias jupyter='ipython notebook'
 
 # add my own bin path
 export PATH=$PATH:~/bin
