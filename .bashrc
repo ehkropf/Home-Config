@@ -91,7 +91,6 @@ function csarep {
 
 # random
 alias cleantex='rm -f *.{aux,bbl,blg,lof,log,lot,nav,out,snm,spl,toc}'
-alias jupyter='ipython notebook'
 
 # add my own bin path
 export PATH=$PATH:~/bin
