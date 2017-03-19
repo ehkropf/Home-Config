@@ -82,7 +82,7 @@ alias la='ls -A'
 
 # Source grep-ing.
 alias mgrep='find . -name \*.m | xargs grep -n --color=auto'
-alias cgrep='find -E . -regex ".*\.(c|h|cpp|hpp)" | xargs grep --color=auto'
+alias cgrep='find . -regextype posix-extended -regex ".*\.(c|h|cpp|hpp)" | xargs grep --color=auto'
 
 # Cxx search and replace.
 function csarep {
