@@ -1,0 +1,2 @@
+fish_vi_key_bindings
+set fish_prompt_pwd_dir_length 0
