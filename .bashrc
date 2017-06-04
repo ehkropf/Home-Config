@@ -72,7 +72,7 @@ alias hconfig='/usr/bin/git --git-dir=$HOME/.hconfig --work-tree=$HOME'
 alias grep='grep --color=auto'
 
 # some ls aliases
-alias ls='ls -GF'
+alias ls='ls -G'
 alias ll='ls -l'
 alias la='ls -A'
 
@@ -94,3 +94,6 @@ alias ldd='otool -L'
 
 # add my own bin path
 export PATH=$PATH:~/bin
+
+# Local VM ssh.
+alias lssh='ssh -p 2222 localhost'
