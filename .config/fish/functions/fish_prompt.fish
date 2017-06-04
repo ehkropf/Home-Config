@@ -14,7 +14,7 @@ function fish_prompt --description 'Write out the prompt'
             set suffix '$'
     end
 
-    echo -n -s (set_color --bold green)"$USER"@(prompt_hostname)(set_color normal):
-    echo -s (set_color $color_cwd)(prompt_pwd)(set_color normal)
+    echo -n -s (set_color --bold green)"$USER"@(prompt_hostname)(set_color --bold normal):
+    echo -s (set_color --bold $color_cwd)(prompt_pwd)(set_color normal)
     echo -n "$suffix "
 end
