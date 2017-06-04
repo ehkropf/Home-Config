@@ -95,5 +95,5 @@ alias ldd='otool -L'
 # add my own bin path
 export PATH=$PATH:~/bin
 
-# ssh to VM
-alias lssh='ssh -p 2222 127.0.0.1'
+# Local VM ssh.
+alias lssh='ssh -p 2222 localhost'
