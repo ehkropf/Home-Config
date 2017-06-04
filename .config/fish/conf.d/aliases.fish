@@ -1,0 +1,7 @@
+alias cgrep='find -E . -regex ".*\.(c|h|cpp|hpp)" | xargs grep --color=auto'
+alias cleantex='rm -f *.{aux,bbl,blg,lof,log,lot,nav,out,snm,spl,toc}'
+alias grep='grep --color=auto'
+alias hconfig='/usr/bin/git --git-dir=$HOME/.hconfig --work-tree=$HOME'
+alias ldd='otool -L'
+alias mgrep='find . -name \*.m | xargs grep -n --color=auto'
+alias mview='mvim -R'
