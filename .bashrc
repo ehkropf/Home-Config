@@ -35,7 +35,7 @@ if [ -z "$color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n\$ '
+    PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[00m\]\n\$ '
 else
     PS1='\u@\h:\w\n\$ '
 fi
@@ -70,7 +70,7 @@ alias hconfig='/usr/bin/git --git-dir=$HOME/.hconfig --work-tree=$HOME'
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls -F --color=auto'
+    alias ls='ls --color=auto'
 fi
 
 # Color grep? Yes please!
