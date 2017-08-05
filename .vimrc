@@ -107,6 +107,9 @@ set sta
 "expandtab (tab is space)
 set et
 
+"relative line numbers
+set relativenumber
+
 "ensures grep generates a file name (vim-latex likes this)
 set grepprg=grep\ -nH\ $*
 
