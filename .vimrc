@@ -36,6 +36,8 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-latex/vim-latex'
 Plugin 'vhdirk/vim-cmake'
 Plugin 'dag/vim-fish'
+Plugin 'majutsushi/tagbar'
+Plugin 'scrooloose/nerdtree'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -92,6 +94,14 @@ let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.spell = 'Ꞩ'
 let g:airline_symbols.notexists = '∄'
 let g:airline_symbols.whitespace = 'Ξ'
+
+"""""""""""""""""""""""""""""""""""""""
+" Tagbar settings
+nmap <F8> :TagbarToggle<CR>
+
+"""""""""""""""""""""""""""""""""""""""
+" NerdTree settings
+nmap <F9> :NERDTreeToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""
 " Editor settings.
