@@ -1,0 +1,5 @@
+alias cgrep='find -E . -regex ".*\.(c|h|cpp|hpp)" | xargs command grep --color=auto'
+alias cleantex='rm -f *.{aux,bbl,blg,lof,log,lot,nav,out,snm,spl,toc}'
+alias ldd='otool -L'
+alias mgrep='find . -name \*.m | xargs command grep -n --color=auto'
+alias mview='mvim -R'
