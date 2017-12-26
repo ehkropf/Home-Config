@@ -97,11 +97,11 @@ let g:airline_symbols.whitespace = 'Ξ'
 
 """""""""""""""""""""""""""""""""""""""
 " Tagbar settings
-nmap <F8> :TagbarToggle<CR>
+nmap <F9> :TagbarToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""
 " NerdTree settings
-nmap <F9> :NERDTreeToggle<CR>
+nmap <F8> :NERDTreeToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""
 " Editor settings.
