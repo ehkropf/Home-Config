@@ -94,6 +94,8 @@ let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.spell = 'Ꞩ'
 let g:airline_symbols.notexists = '∄'
 let g:airline_symbols.whitespace = 'Ξ'
+"
+let g:airline#extensions#tagbar#enabled = 1
 
 """""""""""""""""""""""""""""""""""""""
 " Tagbar settings
