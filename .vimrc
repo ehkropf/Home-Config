@@ -38,6 +38,7 @@ Plugin 'vhdirk/vim-cmake'
 Plugin 'dag/vim-fish'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
+Plugin 'altercation/vim-colors-solarized'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -80,7 +81,7 @@ map <F4> :YcmCompleter FixIt<CR>
 """""""""""""""""""""""""""""""""""""""
 " Airline
 set laststatus=2
-let g:airline_theme = 'light'
+let g:airline_theme = 'solarized'
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
@@ -106,6 +107,12 @@ nmap <F9> :TagbarToggle<CR>
 nmap <F8> :NERDTreeToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""
+" Solarized
+syntax enable
+set background=light
+colorscheme solarized
+
+"""""""""""""""""""""""""""""""""""""""
 " Editor settings.
 
 "ruler is good
@@ -127,7 +134,8 @@ set rnu
 set grepprg=grep\ -nH\ $*
 
 "turn on syntax automatically
-syntax on
+"handled by solarized config above
+"syntax on
 
 "vim-latex: Starting with Vim 7, the filetype of empty .tex files defaults to
 " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
