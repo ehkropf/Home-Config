@@ -30,11 +30,15 @@ Plugin 'VundleVim/Vundle.vim'
 " " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 
-" Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'vim-latex/vim-latex'
+" Plugin 'vim-latex/vim-latex'
 Plugin 'vhdirk/vim-cmake'
+Plugin 'dag/vim-fish'
+Plugin 'majutsushi/tagbar'
+Plugin 'scrooloose/nerdtree'
+Plugin 'altercation/vim-colors-solarized'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -77,7 +81,7 @@ map <F4> :YcmCompleter FixIt<CR>
 """""""""""""""""""""""""""""""""""""""
 " Airline
 set laststatus=2
-let g:airline_theme = 'light'
+let g:airline_theme = 'solarized'
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
@@ -91,6 +95,22 @@ let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.spell = 'Ꞩ'
 let g:airline_symbols.notexists = '∄'
 let g:airline_symbols.whitespace = 'Ξ'
+"
+let g:airline#extensions#tagbar#enabled = 1
+
+"""""""""""""""""""""""""""""""""""""""
+" Tagbar settings
+nmap <F9> :TagbarToggle<CR>
+
+"""""""""""""""""""""""""""""""""""""""
+" NerdTree settings
+nmap <F8> :NERDTreeToggle<CR>
+
+"""""""""""""""""""""""""""""""""""""""
+" Solarized
+syntax enable
+set background=light
+colorscheme solarized
 
 """""""""""""""""""""""""""""""""""""""
 " Editor settings.
@@ -107,14 +127,15 @@ set sta
 "expandtab (tab is space)
 set et
 
-"relative line numbers
-set relativenumber
+"relative line numbering
+set rnu
 
 "ensures grep generates a file name (vim-latex likes this)
 set grepprg=grep\ -nH\ $*
 
 "turn on syntax automatically
-syntax on
+"handled by solarized config above
+"syntax on
 
 "vim-latex: Starting with Vim 7, the filetype of empty .tex files defaults to
 " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
