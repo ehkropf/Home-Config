@@ -66,6 +66,7 @@ set -o vi
 
 # Dotfile tracking (home config).
 alias hconfig='/usr/bin/git --git-dir=$HOME/.hconfig --work-tree=$HOME'
+alias hc=hconfig
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
