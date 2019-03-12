@@ -105,6 +105,9 @@ let g:airline#extensions#ycm#enabled = 1
 let g:airline#extensions#ycm#error_symbol = 'E:'
 let g:airline#extensions#ycm#warning_symbol = 'W:'
 
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+
 """""""""""""""""""""""""""""""""""""""
 " Tagbar settings
 nmap <F9> :TagbarToggle<CR>
