@@ -142,27 +142,3 @@ set rnu
 
 "ensures grep generates a file name (vim-latex likes this)
 set grepprg=grep\ -nH\ $*
-
-"turn on syntax automatically
-"handled by solarized config above
-"syntax on
-
-"vim-latex: Starting with Vim 7, the filetype of empty .tex files defaults to
-" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
-" The following changes the default filetype back to 'tex'
-
-let g:tex_flavor='latex'
-
-"""""""""""""""""""""""""""""""""""""""
-" Mappings for closing things.
-
-inoremap <expr> " strpart(getline('.'), col('.')-1, 1) == "\"" ? "\<Right>" : "\"\"\<Left>"
-inoremap <expr> ' strpart(getline('.'), col('.')-1, 1) == "\'" ? "\<Right>" : "\'\'\<Left>"
-inoremap ( ()<LEFT>
-inoremap <expr> ) strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
-inoremap [ []<LEFT>
-inoremap <expr> ] strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
-inoremap { {}<LEFT>
-inoremap <expr> } strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
