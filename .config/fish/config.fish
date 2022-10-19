@@ -9,4 +9,4 @@ set PATH (string match -v . $PATH)
 set PATH /opt/local/bin /opt/local/sbin $PATH
 
 # Own path
-set PATH $PATH ~/bin
+set PATH $PATH ~/bin ~/Library/Python/3.9/bin

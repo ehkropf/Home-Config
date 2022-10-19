@@ -1,1 +1,4 @@
 .hconfig
+.ccls
+compile_commands.json
+*.swp
