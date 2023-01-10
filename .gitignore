@@ -2,3 +2,4 @@
 .ccls
 compile_commands.json
 *.swp
+.cache
