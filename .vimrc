@@ -6,12 +6,11 @@ call plug#begin('~/.vim/bundle')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-"Plug 'vim-latex/vim-latex'
+Plug 'lervag/vimtex'
 Plug 'vhdirk/vim-cmake'
 Plug 'dag/vim-fish'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
-"Plug 'altercation/vim-colors-solarized'
 Plug 'lifepillar/vim-solarized8'
 Plug 'tpope/vim-fugitive'
 Plug 'aklt/plantuml-syntax'
@@ -27,6 +26,7 @@ set smarttab
 set expandtab
 set relativenumber
 set linebreak
+set mouse=a
 
 " ensures grep generates a file name (vim-latex likes this)
 set grepprg=grep\ -nH\ $*
@@ -87,9 +87,41 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
 """""""""""""""""""""""""""""""""""""""
+" vimtex
+"
+" This is necessary for VimTeX to load properly. The "indent" is optional.
+" Note that most plugin managers will do this automatically.
+filetype plugin indent on
+
+" This enables Vim's and neovim's syntax-related features. Without this, some
+" VimTeX features will not work (see ":help vimtex-requirements" for more
+" info).
+" EK: copied from github page, but this is done above.
+"syntax enable
+
+" Viewer options: One may configure the viewer either by specifying a built-in
+" viewer method:
+"let g:vimtex_view_method = 'zathura'
+
+" Or with a generic interface:
+let g:vimtex_view_general_viewer = 'open'
+let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
+
+" VimTeX uses latexmk as the default compiler backend. If you use it, which is
+" strongly recommended, you probably don't need to configure anything. If you
+" want another compiler backend, you can change it as follows. The list of
+" supported backends and further explanation is provided in the documentation,
+" see ":help vimtex-compiler".
+"let g:vimtex_compiler_method = 'latexrun'
+
+" Most VimTeX mappings rely on localleader and this can be changed with the
+" following line. The default is usually fine and is the symbol "\".
+"let maplocalleader = ","
+
+"""""""""""""""""""""""""""""""""""""""
 " kick off plantuml and view svg
-nmap <Leader>ll :!plantuml -tsvg %:.<CR>
-nmap <Leader>lv :!plantuml -tsvg %:. && open %:.:h/%:t:r.svg<CR>
+"nmap <Leader>ll :!plantuml -tsvg %:.<CR>
+"nmap <Leader>lv :!plantuml -tsvg %:. && open %:.:h/%:t:r.svg<CR>
 
 """""""""""""""""""""""""""""""""""""""
 " CoC.nvim
@@ -258,3 +290,9 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 nmap <leader>h :CocCommand clangd.switchSourceHeader<CR>
 nmap <leader>s :CocCommand clangd.switchSourceHeader split<CR>
 nmap <leader>v :CocCommand clangd.switchSourceHeader vsplit<CR>
+
+" Fix json comment(!?) highlight
+autocmd FileType json syntax match Comment +\/\/.\+$+
+
+" Toggle inlay hints
+nmap <leader>T :CocCommand document.toggleInlayHint<CR>

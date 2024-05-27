@@ -15,6 +15,7 @@ function fish_prompt --description 'Write out the prompt'
     end
 
     echo -n (set_color green)"$USER"@(prompt_hostname)(set_color normal):
-    echo (set_color $color_cwd)(prompt_pwd)(set_color normal)
-    echo -n "$suffix "
+    echo (set_color $color_cwd)(prompt_pwd)(set_color normal) (fish_git_prompt)
+    ek_mode_prompt
+    echo -n $suffix' '
 end
