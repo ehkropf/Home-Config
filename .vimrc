@@ -4,6 +4,7 @@
 call plug#begin('~/.vim/bundle')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'gergap/vim-ollama'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'lervag/vimtex'
@@ -13,6 +14,8 @@ Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
 Plug 'lifepillar/vim-solarized8'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
 Plug 'aklt/plantuml-syntax'
 
 call plug#end()
@@ -24,6 +27,7 @@ call plug#end()
 set shiftwidth=4
 set smarttab
 set expandtab
+set number
 set relativenumber
 set linebreak
 set mouse=a

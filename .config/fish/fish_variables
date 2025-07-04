@@ -2,7 +2,14 @@
 # VERSION: 3.0
 SETUVAR --export JAVA_HOME:/Library/Java/JavaVirtualMachines/openjdk11/Contents/Home
 SETUVAR RACK_DIR:/Users/ehkropf/src/Rack\x2dSDK
-SETUVAR __fish_initialized:3400
+SETUVAR __fish_initialized:3800
+SETUVAR _fisher_aohorodnyk_2F_fish_2D_autovenv_files:\x7e/\x2econfig/fish/conf\x2ed/autovenv\x2efish
+SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1eaohorodnyk/fish\x2dautovenv
+SETUVAR _fisher_upgraded_to_4_4:\x1d
+SETUVAR autoenv_announce:yes
+SETUVAR autoenv_dir:venv
+SETUVAR autoenv_enable:yes
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_host_remote:yellow
 SETUVAR fish_pager_color_selected_background:\x2dr

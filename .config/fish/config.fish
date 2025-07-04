@@ -9,8 +9,14 @@ set PATH (string match -v . $PATH)
 # MacPort paths
 set PATH /opt/local/bin /opt/local/sbin $PATH
 
+# npm global path
+set PATH ~/.npm-global/bin $PATH
+
 # Own path
 set PATH $PATH ~/bin ~/.local/bin
 
 # Not set on Mac when invoking from iTerm2. O_o
 set -gx SHELL (type -p fish)
+
+# Add own manapath
+#set -gx MANPATH ~/share/man $MANPATH
